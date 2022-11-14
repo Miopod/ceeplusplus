@@ -1,0 +1,67 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+//1. luokan nimi
+class Pokemon {
+public:
+//1. luokan atribuutti
+string nimi;
+//2. luokan metodi
+void aani() {
+cout << "Pika pika!";
+}
+//6. ylikuormitus
+int lasku(int x, int y) {
+return x + y;
+}
+double lasku(double x, double y) {
+return x + y;
+}
+};
+
+int main() {
+
+//1. luokan olio
+Pokemon pokeobj;
+//asetetaan arvot olion atribuuteille
+pokeobj.nimi = "Pikachu";
+//1. tulostetaan olioiden arvot
+cout << pokeobj.nimi << "\n";
+
+//2. kutsutaan metodia
+pokeobj.aani() << "\n";
+
+//3. tässä luodaan vektori
+vector <int> v = {25, 26, 172};
+//3. lisätään vektoriin pari numeroa lisää
+v.push_back(1);
+v.push_back(4);
+v.push_back(7);
+//3. tulostetaan vektori
+cout << "v = { ";
+for (int n : v)
+cout << n << ", ";
+cout << "}; \n";
+
+//4. viittaus
+string lintu = "Ankka";
+string &elain = lintu;
+//4. tulostetaan ankan tiedot
+cout << lintu << "\n";
+cout << elain << "\n";
+
+//5. linnun osoite
+cout << &lintu;
+//linnun osoittimen tallennus
+string* ptr = &lintu;
+cout << ptr << "\n";
+
+//6. ylikuormitus
+int numero1 = lasku(8, 5);
+double numero2 = lasku(4.3, 6.26);
+cout << "Int: " << numero1 << "\n";
+cout << "Double: " << numero2;
+return 0;
+}

@@ -1,0 +1,26 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main() {
+
+//luodaan ja avataan tekstitiedosto
+ofstream tiedosto("fileenimi.txt");
+//kirjoitetaan tiedostoon
+tiedosto << "Tekstiä fileessä.";
+//suljetaan tiedosto
+tiedosto.close();
+
+//luetaan tiedosto
+string teksti;
+//luetaan teksti tiedostosta
+ifstream luen("tiedosto.txt");
+//käytetään while looppia getlinen kanssa
+while (getline (luen, teksti)) {
+//tulostetaan tiedoston teksti
+cout << teksti;
+}
+//suljetaan tiedosto
+luen.close();
+}
