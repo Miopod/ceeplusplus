@@ -1,0 +1,31 @@
+#include <iostream>
+#include <iterator>
+#include <list>
+using namespace std;
+
+int main()
+{
+    //lista luodaan tässä
+    list<int> lista{ 1, 2, 3, 4, 5 };
+    //määritetään iteraatio listaan
+    list <int>::iterator ptr = ar.begin();
+    list <int>::iterator ftr = ar.end();
+    
+    for (auto it = lista.begin(); it !=
+        lista.end(); ++it)
+        cout << ' ' << *it;
+     //palautetaan uusi iteraatio next():n avulla   
+    auto it = next(ptr,3);
+    //palautetaan uusi iteraatio prev():n avulla
+    auto it1 = prev(ftr, 3);
+    //näytetään iteraation sijainti
+    cout << "Uuden iteraattorin sijainti next():ä käyttäen on: ";
+    cout << *it << " ";
+    cout << endl;
+    //näytetään iteraation sijainti
+    cout << "Uuden iteraattorin sijainti prev():ä käyttäen on: ";
+    cout << *it1 << " ";
+    cout << endl;
+    
+    return 0;
+}
