@@ -23,4 +23,21 @@ cout << teksti;
 }
 //suljetaan tiedosto
 luen.close();
+
+//luodaan ja avataan binääritiedosto
+//lisätään tiedostonimen perään ios_base::binarylippu
+ofstream binarf("binaari.txt", ios_base::binary);
+binarf << 123234;
+binarf.close();
+
+//luetaan binääritiedosto
+int numero;
+ifstream luetaan("binarf.txt", ios_base::binary);
+while (getline (luetaan, numero)) {
+cout << numero;
+}
+luetaan.close();
+
+
+return 0;
 }
