@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+//tässä on koodi jota testataan virheiltä
+    try {
+    //testataan käyttäjän ikää kysymällä ensin ikä
+        int ika;
+        cout << "Anna ikäsi: ";
+        cin >> ika;
+        //jos ikä on 18 tai yli käyttäjä pääsee sisään
+        if (ika >= 18) {
+            cout << "Pääsy sallittu, henkilö täysi-ikäinen.";
+        } else {
+        //tässä tulee poikkeus jos ikä ei vastaa sallittua rajaa
+          throw (ika);
+        }
+    }
+    //jos tryssa olevassa koodissa on virhe suoritetaan sen sijaan tämä
+    catch (int numero) {
+    //jos käyttäjä on alle 18-vuotias pääsy evätään
+        cout << "Pääsh evätty. Ikäraja on 18 vuotta. \n";
+        cout << "Ikäsi on: " << numero;
+    }
+    return 0;
+}
